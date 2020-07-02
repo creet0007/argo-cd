@@ -2643,6 +2643,9 @@ spec:
         - --staticassets
         - /shared/app
         image: argoproj/argocd:latest
+        env:
+        - name: ARGOCD_MAX_CONCURRENT_LOGIN_REQUESTS_COUNT
+          value: "0"
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
